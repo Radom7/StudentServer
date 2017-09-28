@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="StudentMapper">
+
+	<sql id="base_column">
+	    id,name,chinese,math,english
+	</sql>
+	
+	<select id="selectByEntity" parameterType="Stu" resultType="Stu">
+		select 
+		<include refid="base_column" />
+		from student
+	</select>
+	
+	<select id="selectByPrimaryKey" parameterType="int" resultType="Stu">
+		select 
+		<include refid="base_column" />
+		from student where id = #{id}
+	</select>
+
+	
+	<insert id="insert" parameterType="Stu">
+		INSERT INTO student(name,chinese,math,english) VALUES (#{name}, #{chinese},#{math},#{english});
+	</insert>
+	
+	<update id="update" parameterType="Stu">
+		update student
+		<set>
+			<if test="name != null">
+				name = #{name},
+				chinese =#{chinese},
+				math =#{math},
+				english=#{english}
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from student where id = #{id}
+	</delete>
+</mapper>

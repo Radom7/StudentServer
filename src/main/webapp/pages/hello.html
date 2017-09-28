@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>登录页面</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>HelloController</title>
+		<script type="text/javascript">
+		</script>
+	</head>
+
+	<body bgcolor="#7FFFD4">
+		<div style="width: 300px;margin-left: auto;margin-right: auto;text-align: center;">
+			 <h2>学生管理系统</h2>
+			 <form >
+		     <h3>用    户：<input type="text" id="name" name="name" style="width: 200px;height: 25px"/></h3>
+			 <h3>密    码：<input type="password" id="password" name="password" style="width: 200px;height: 25px"/></h3>
+             <input  name="a" type="button" value="登 录"  onclick="checkpassword();" style="width: 100px;height: 30px;border-style: hidden;"/>
+             <input type="reset" value="重 置"  style="width: 100px;height: 30px;border-style: hidden;"/>
+    		</form>
+             <script>
+               function checkpassword(){
+               var nam="root";
+               var innam=document.getElementById("name").value;
+               var pwd="123456";//你和朋友约定的密码，写死的
+               var inpwd=document.getElementById("password").value;//获取输入的代码
+               if(pwd==inpwd&&nam==innam){  //判断一下是否一样
+            	   window.location.href="http://localhost:8080/StudentServer/student ";
+                 }
+               else{
+             	  alert("请输入正确的用户名和密码");
+             
+                }
+             }
+           
+            </script>	
+		</div>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="carMapper">
+
+	<sql id="base_column">
+	    id,name,price
+	</sql>
+	
+	<select id="selectByEntity" parameterType="car" resultType="car">
+		select 
+		<include refid="base_column" />
+		from car
+	</select>
+	
+	<select id="selectByPrimaryKey" parameterType="int" resultType="car">
+		select 
+		<include refid="base_column" />
+		from car where id = #{id}
+	</select>
+
+	
+	<insert id="insert" parameterType="car">
+		insert into car (name) values (#{name})
+	</insert>
+	
+	<update id="update" parameterType="car">
+		update car
+		<set>
+			<if test="name != null">
+				name = #{name},
+				price=#{price},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from car where id = #{id}
+	</delete>
+</mapper>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>汽车</title>
+		
+		<#include "/common/meta.html"/>
+		<script type="text/javascript">
+		</script>
+	</head>
+	<body>
+		<h1>汽车页面</h1>
+
+		<div>
+			<table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+				<tr align="center">
+					<th>序号</th>
+					<th>品牌</th>
+					<th>数量</th>
+					<th>操作</th>
+				</tr>
+				<#if list??>
+	        		<#list list as entity>
+					<tr align="center" bgcolor="#FFFFFF">
+						<td>${entity.id}</td>
+						<td>${(entity.name)!''}</td>
+						<td>${(entity.price)!''}</td>
+						<td>
+							<a href="${ctx}/car/view/${entity.id}"><button>查看</button></a>
+							<a href="${ctx}/car/edit/${entity.id}"><button>修改</button></a>
+							<a href="${ctx}/car/delete/${entity.id}"><button>删除</button></a>
+						</td>
+					</tr>
+					</#list>
+		        </#if>
+			</table>
+		</div>
+		<div>
+		      <h3><a href="${ctx}/car/new"><button>增加</button></a>
+			  <a href="${ctx}/hello"><button>返回</button></a></h3>
+			 
+		</div>
+	</body>
+</html>

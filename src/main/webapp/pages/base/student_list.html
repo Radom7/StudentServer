@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>学生</title>
+		<#include "/common/meta.html"/>
+		
+		<script type="text/javascript">
+		</script>
+	</head>
+	<body bgcolor="#7FFFD4" >
+		<div style="width: 300px;margin-left: auto;margin-right: auto;text-align: center;">
+			<h1>学生成绩管理系统</h1>
+		</div>
+		<div>
+			<table  width="100%"  border="1" align="center" cellpadding="3" cellspacing="1">
+				<tr align="center" bgcolor="#FFFFFF">
+					<th>学号</th>
+					<th>姓名</th>
+					<th>语文</th>
+					<th>数学</th>
+					<th>英语</th>
+					<th>操作</th>
+				</tr>
+				<#if list??>
+	        		<#list list as entity>
+					<tr align="center" bgcolor="#FFFFFF">
+						<td>${entity.id}</td>
+						<td>${(entity.name)!''}</td>·
+						<td>${(entity.chinese)!''}</td>
+						<td>${(entity.math)!''}</td>
+						<td>${(entity.english)!''}</td>
+						<td>
+							<a href="${ctx}/student/view/${entity.id}" ><button>查看</button></a>
+							<a href="${ctx}/student/edit/${entity.id}"><button>修改</button></a>
+							<a href="${ctx}/student/delete/${entity.id}"><button>删除</button></a>
+						</td>
+					</tr>
+					</#list>
+		        </#if>
+			</table>
+		</div>
+		<div>
+		      <h3><a href="${ctx}/student/new"><button>增加</button></a>
+			  <a href="${ctx}/hello"><button>返回</button></a></h3>
+			 
+		</div>
+	</body>
+</html>

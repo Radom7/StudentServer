@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	
+		<title>添加</title>
+		<#include "/common/meta.html"/>
+		<script type="text/javascript">
+		</script>
+	</head>
+	<body bgcolor="#7FFFD4">
+		<div style="width: 300px;margin-left: auto;margin-right: auto;text-align: center;">
+		<h1>学生成绩信息添加</h1>
+		</div>
+		
+		<form action="${ctx}/student/save" method="post">
+			<input type="hidden" name="id" value="${(entity.id)!''}" />
+			<div>
+				<table width="60%" border="1" cellpadding="3" cellspacing="1">
+					<tr bgcolor="#FFFFFF">
+						<td width="80px">添加信息</td>
+						<td>姓名：</td>
+						<td><input type="text" id="name" name="name" value="${(entity.name)!''}" /></td>
+						<td>语文：</td>
+						<td><input type="text" name="chinese" value="${(entity.chinese)!''}" /></td>
+						<td>数学：</td>
+						<td><input type="text" name="math" value="${(entity.math)!''}" /></td>
+						<td>英语：</td>       
+						<td><input type="text" name="english" value="${(entity.english)!''}" /></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<h3><input type="submit" value="保存"/></h3>
+			</div>
+		</form>
+		<div>
+			<h3><a href="${ctx}/student"><button>返回</button></a></h3>
+		</div>
+	</body>
+</html>

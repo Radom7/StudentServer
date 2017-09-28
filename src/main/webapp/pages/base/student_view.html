@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>查看</title>
+	
+		<#include "/common/meta.html"/>
+		<script type="text/javascript">
+		</script>
+	</head>
+	<body bgcolor="#7FFFD4">
+		<div style="width: 300px;margin-left: auto;margin-right: auto;text-align: center;">
+		<h1>学生成绩信息</h1>
+		</div>
+		
+		<div style="margin-left: auto;margin-right: auto;text-align: center;">
+			<table width="60%" border="1" cellpadding="3" cellspacing="1">
+				<tr align="center" bgcolor="#FFFFFF">
+					<td width="15%">学号</td>
+					<td width="15%">姓名</td>
+					<td width="15%">语文</td>
+					<td width="15%">数学</td>
+					<td width="15%">英语</td>
+					
+				</tr>
+				<tr align="center" bgcolor="#FFFFFF">
+					<td>${entity.id}</td>
+					<td>${entity.name}</td>
+					<td>${entity.chinese}</td>
+					<td>${entity.math}</td>
+					<td>${entity.english}</td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<h3><a href="${ctx}/student" ><button>确认</button></a></h3>
+			 
+		</div>
+	</body>
+</html>

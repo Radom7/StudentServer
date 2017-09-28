@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>汽车查看</title>
+	
+		<#include "/common/meta.html"/>
+		<script type="text/javascript">
+		</script>
+	</head>
+	<body>
+		<h1>汽车信息</h1>
+		<div>
+			<table width="60%" border="0" cellpadding="3" cellspacing="1">
+				<tr>
+					<td width="15%">车名:</td>
+					<td>${entity.name}</td>
+					<td width="15%">数量:</td>
+					<td>${entity.price}</td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<h3><a href="${ctx}/car"><button>返回</button></a></h3>
+			 
+		</div>
+	</body>
+</html>
